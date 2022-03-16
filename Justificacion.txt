@@ -1,0 +1,3 @@
+En mi experiencia EJS y Handlebars fueron mucho mejor para trabajar que Pug, siendo este ultimo muy feo y desestructurado a la vista, me marea mucho el hecho de trabajar sin tags y tener que tener todo solo con tabulaciones.
+
+Para mi proyecto muy probablemente use EJS pero no descarto HBS. me parece una forma intuitiva de hacer los scripts y el renderizado condicional.
