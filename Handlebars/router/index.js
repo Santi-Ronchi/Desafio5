@@ -28,7 +28,7 @@ router.get('/productos', (req, res) => {
 });
 
 router.get('/chatroom', (req, res) => {
-    res.sendFile('index.html')
+    res.render('chatroom')
   })
 
 module.exports = router;
