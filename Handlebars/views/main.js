@@ -1,9 +1,8 @@
-const socket = io.connect()
-
+const socket = io.connect();
 socket.on('mi mensaje', (data) => {
   alert(data)
   socket.emit('notificacion', 'mensaje recibido con exito')
-})
+});
 
 function render(data) {
   const html = data
@@ -11,13 +10,12 @@ function render(data) {
       return `<div>
             <strong>${elem.author}</strong>:
             <em>${elem.text}</em> </div>`
-    })
-    .join(' ')
-  document.getElementById('mensajes').innerHTML = html
+    }).join(' ');
+  document.getElementById('mensajes').innerHTML = html;
 }
 
 socket.on('messages', function (data) {
-  render(data)
+  render(data);
 })
 
 function addMessage(e) {
@@ -25,6 +23,6 @@ function addMessage(e) {
     author: document.getElementById('username').value,
     text: document.getElementById('texto').value,
   }
-  socket.emit('new-message', mensaje)
-  return false
+  socket.emit('new-message', mensaje);
+  return false;
 }

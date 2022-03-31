@@ -10,7 +10,7 @@ const httpServer = new HttpServer(app);
 const io = new IOServer(httpServer);
 
 
-app.use(express.static('./public'))
+app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
 app.engine('hbs', engine({
     extname: '.hbs',
