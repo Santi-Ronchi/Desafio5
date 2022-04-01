@@ -1,0 +1,22 @@
+body {
+	margin: 0;
+	background: #1b2927;
+    font: normal bold 'Work Sans', sans-serif;
+	font-weight: 300;
+	color: whitesmoke;
+}
+
+.mensajes {
+    height: 300px;
+	overflow-y:auto;
+	width: 50%;
+	background-color: black;
+}
+
+.table{
+	color: whitesmoke;
+}
+
+h2 {
+	color: aqua;
+}

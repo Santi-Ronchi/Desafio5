@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody id="products">
+    {{#if products.length}}
+      {{#each products}}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{title}}</td>
+          <td>${{price}}</td>
+          <td><img src="{{url}}" height="50" width="50"></td>
+        </tr>
+      {{/each}}
+    {{else}}
+      <tr>
+        <td colspan="4">No hay productos</td>
+      </tr>
+    {{/if}}
+  </tbody>
+</table>
