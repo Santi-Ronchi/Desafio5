@@ -1,4 +1,5 @@
 const socket = io.connect();
+
 socket.on('mi mensaje', (data) => {
   alert(data)
   socket.emit('notificacion', 'mensaje recibido con exito')
@@ -11,11 +12,10 @@ function timeOfMessage(){
 }
 
 function render(data) {
-  const html = data
-    .map((elem, index) => {
+  const html = data.map((elem, index) => {
       return `<div>
-            <strong style="color: blue">${elem.author}</strong><bdi style:"color: red">[${elem.time}]</bdi>:
-            <em style="color: green">${elem.text}</em> </div>`
+            <strong style="color: blue">${elem.email}</strong><bdi style:"color: red">[${elem.date}]</bdi>:
+            <em style="color: green">${elem.data}</em> </div>`
     }).join(' ');
   document.getElementById('mensajes').innerHTML = html;
 }
@@ -29,9 +29,9 @@ function addMessage(e) {
   let time = timeOfMessage()
 
   const mensaje = {
-    author: document.getElementById('username').value,
-    text: document.getElementById('texto').value,
-    time: time
+    email: document.getElementById('username').value,
+    data: document.getElementById('texto').value,
+    date: time
   }
   socket.emit('new-message', mensaje);
   return false;
@@ -41,7 +41,7 @@ function addProduct(e) {
   const producto = {
     title: document.getElementById('title').value,
     price: document.getElementById('price').value,
-    url: document.getElementById('url').value,
+    thumbnail: document.getElementById('thumbnail').value,
   }
   socket.emit('new-product', producto);
   return false;
